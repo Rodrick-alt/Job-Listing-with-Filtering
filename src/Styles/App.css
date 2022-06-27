@@ -1,0 +1,37 @@
+/* BASIC ****************************************************** */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  min-height: 100% !important;
+  height: 100%;
+  font-size: 16px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body,
+main,
+#root,
+#page-wrapper {
+  height: 100%;
+  font-family: "League Spartan", sans-serif;
+  color: hsl(260deg, 8%, 14%);
+}
+
+#page-wrapper {
+  height: auto;
+}
+
+/* * {
+  outline: 1px solid #f00 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+} */
+/* No hover effects on touch ***********************************/
+/* BASICS ****************************************************** */
