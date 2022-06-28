@@ -1,9 +1,32 @@
 import React from 'react';
 import './Styles/App.css';
 import { useState } from 'react';
+import { useEffect } from 'react';
 import JsonData from './data.json';
 
 function App() {
+  const [array, setArray] = useState([]);
+
+  function SearchBar(tab) {
+    if (tab !== '' && tab !== 'Clear') {
+      let filterTab = <button key={Math.random(0, 201)}>{tab}<p>X</p></button>;
+      setArray(old => [old, filterTab]);
+    }
+    // Stops infinite re-renders by only excuting useEffect when The value(Mapped) changes.
+    // Setter Functions called in their own components have to be conditional. 
+    // useEffect(() => {
+    //   setArray(old=>[old,filterTab])
+    // }, filterTab);
+  }
+  function HandleClear() {
+    setArray(old => []);
+    document.getElementById('search-bar').style.display = 'none';
+  }
+
+  function HandleFillBar(tab) {
+    SearchBar(tab)
+    document.getElementById('search-bar').style.display = 'flex';
+  }
 
   function FillListings() {
     const [listings, setListings] = useState([]);
@@ -34,39 +57,26 @@ function App() {
         </div>
 
         <div className='filter-tablets'>
-          <button>HTML</button>
-          <button>HTML</button>
+          <button onClick={() => HandleFillBar('HTML')}>HTML</button>
         </div>
       </div>);
-  }
-
-  function SearchBar(tablets) {
-    function FillTablest() {
-      return (
-        <div className='search-tablets'>
-          <button>
-            HTML
-          </button>
-        </div>
-      )
-    }
-
-    return (
-      <div id='search-bar'>
-        <div id='filter-tablets'>
-          <FillTablest />
-        </div>
-        <button id='clear-btn'>Clear</button>
-      </div>
-    )
   }
 
   return (
     <div id='page-wrapper'>
       <header>
       </header>
+
       <main>
-        <SearchBar />
+
+        <div id='search-bar'>
+          <div className='search-tablets'>
+            {array}
+          </div>
+          <button id='clear-btn'
+            onClick={() => HandleClear()}>Clear</button>
+        </div>
+
         <FillListings />
       </main>
     </div>
