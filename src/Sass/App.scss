@@ -34,6 +34,14 @@ main,
 
 /* No hover effects on touch ***********************************/
 @media (hover: hover) and (pointer: fine) {
+    #clear-btn:hover{
+        text-decoration: underline;
+    }
+    .search-tablets button:hover{
+        p{
+            background-color: hsl(180, 14%, 20%) !important;
+        }
+    }
 }
 
 /* BASICS ****************************************************** */
@@ -55,29 +63,30 @@ main{
     width: 100%;
     height: auto;
     gap: 3rem;
+    padding: 5rem 0;
+
     #search-bar{
         position: relative;
-        bottom: 2.5rem;
+        bottom: 6.5rem;
         width: 80%;
+        height: auto;
         min-width: 300px;
-        height: 4.5rem;
         border-radius: 5px;
-        box-shadow: -5px 10px 20px hsla(180, 29%, 50%, 0.349)    ;
         background: white; 
+        box-shadow: -5px 10px 20px hsla(180, 29%, 50%, 0.349);
     }
     .job-post{
-        display:flex;
+        display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
         align-items: center;
         width: 80%;
-        // size and box-shadow
-        min-width: 300px;
         height: 9rem;
+        min-width: 300px;
         padding: 1.5rem 3rem;
         border-radius: 5px;
-        box-shadow: -5px 10px 20px hsla(180, 29%, 50%, 0.349);
         background: white;
+        box-shadow: -5px 10px 20px hsla(180, 29%, 50%, 0.349);
         .group1{
             display: flex;
             flex-flow: row;
@@ -91,12 +100,14 @@ main{
         }
     }
 }
+
+
 #search-bar{
-    display: flex;
-    flex-flow: row wrap;
+    display: none;
+    flex-flow: row;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 1rem;
     button{
         padding: .5rem;
         outline: none;
@@ -107,7 +118,31 @@ main{
         background-color: transparent;
         cursor: pointer;
     }
+    .search-tablets{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 1rem;
+        button{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            gap:.3rem;
+            padding: 0 0 0 .5rem !important;
+            background-color: hsl(180, 31%, 95%) !important;
+            p{
+                padding: .5rem;
+                color:hsl(180, 31%, 95%);
+                background-color: hsl(180, 29%, 50%);
+            }
+        }
+    }
 }
+#search-bar>*{ flex: 0 1 100%;}
+#clear-btn{flex:1;}
+
 
 .job-details{
     display: flex;

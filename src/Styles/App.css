@@ -35,6 +35,15 @@ main,
   visibility: visible !important;
 } */
 /* No hover effects on touch ***********************************/
+@media (hover: hover) and (pointer: fine) {
+  #clear-btn:hover {
+    text-decoration: underline;
+  }
+
+  .search-tablets button:hover p {
+    background-color: hsl(180deg, 14%, 20%) !important;
+  }
+}
 /* BASICS ****************************************************** */
 header {
   width: 100%;
@@ -54,16 +63,17 @@ main {
   width: 100%;
   height: auto;
   gap: 3rem;
+  padding: 5rem 0;
 }
 main #search-bar {
   position: relative;
-  bottom: 2.5rem;
+  bottom: 6.5rem;
   width: 80%;
+  height: auto;
   min-width: 300px;
-  height: 4.5rem;
   border-radius: 5px;
-  box-shadow: -5px 10px 20px hsla(180deg, 29%, 50%, 0.349);
   background: white;
+  box-shadow: -5px 10px 20px hsla(180deg, 29%, 50%, 0.349);
 }
 main .job-post {
   display: flex;
@@ -71,12 +81,12 @@ main .job-post {
   justify-content: space-between;
   align-items: center;
   width: 80%;
-  min-width: 300px;
   height: 9rem;
+  min-width: 300px;
   padding: 1.5rem 3rem;
   border-radius: 5px;
-  box-shadow: -5px 10px 20px hsla(180deg, 29%, 50%, 0.349);
   background: white;
+  box-shadow: -5px 10px 20px hsla(180deg, 29%, 50%, 0.349);
 }
 main .job-post .group1 {
   display: flex;
@@ -91,11 +101,11 @@ main .job-post img {
 }
 
 #search-bar {
-  display: flex;
-  flex-flow: row wrap;
+  display: none;
+  flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 #search-bar button {
   padding: 0.5rem;
@@ -106,6 +116,35 @@ main .job-post img {
   color: hsl(180deg, 29%, 50%);
   background-color: transparent;
   cursor: pointer;
+}
+#search-bar .search-tablets {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+#search-bar .search-tablets button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0 0 0 0.5rem !important;
+  background-color: hsl(180deg, 31%, 95%) !important;
+}
+#search-bar .search-tablets button p {
+  padding: 0.5rem;
+  color: hsl(180deg, 31%, 95%);
+  background-color: hsl(180deg, 29%, 50%);
+}
+
+#search-bar > * {
+  flex: 0 1 100%;
+}
+
+#clear-btn {
+  flex: 1;
 }
 
 .job-details {
