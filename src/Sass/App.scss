@@ -203,3 +203,72 @@ main{
         cursor: pointer;
     }
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    main{
+    .job-post{
+        flex-flow: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        height: 20rem;
+        min-width: 300px;
+        padding: 1rem;
+        .group1{
+            flex-flow: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    }
+}
+.job-details{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap:.8rem;
+    .job-type, .company-name{
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+        gap: 1rem;
+    }
+}
+
+.company-name{
+    gap: .9rem;
+    font-size: .9rem;
+    font-weight: 700;
+    color: hsl(180, 29%, 50%);
+    .new-tag,.featured-tag{
+        font-size: .7rem;
+        color:hsl(180, 31%, 95%);
+        padding: .3rem;
+        border-radius: 10px;
+        background-color: hsl(180, 29%, 50%);
+    }
+    .featured-tag{
+        background-color: hsl(180, 14%, 20%);
+    }
+}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -207,3 +207,63 @@ main .job-post img {
   background-color: hsl(180deg, 31%, 95%);
   cursor: pointer;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  main .job-post {
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 20rem;
+    min-width: 300px;
+    padding: 1rem;
+  }
+  main .job-post .group1 {
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  main .job-post img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .job-details {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  .job-details .job-type, .job-details .company-name {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-start;
+    gap: 1rem;
+  }
+
+  .company-name {
+    gap: 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: hsl(180deg, 29%, 50%);
+  }
+  .company-name .new-tag, .company-name .featured-tag {
+    font-size: 0.7rem;
+    color: hsl(180deg, 31%, 95%);
+    padding: 0.3rem;
+    border-radius: 10px;
+    background-color: hsl(180deg, 29%, 50%);
+  }
+  .company-name .featured-tag {
+    background-color: hsl(180deg, 14%, 20%);
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
