@@ -26,11 +26,11 @@ main,
 #page-wrapper {
     height: auto;
 }
-/* * {
-  outline: 1px solid #f00 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-} */
+// * {
+//   outline: 1px solid #f00 !important;
+//   opacity: 1 !important;
+//   visibility: visible !important;
+// } 
 
 /* No hover effects on touch ***********************************/
 @media (hover: hover) and (pointer: fine) {
@@ -106,7 +106,7 @@ main{
 
 
 #search-bar{
-    display: none;
+    display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
@@ -143,8 +143,8 @@ main{
         }
     }
 }
-#search-bar>*{ flex: 0 1 100%;}
-#clear-btn{flex:1;}
+// #search-bar>*{ flex: 0 1 100%;}
+// #clear-btn{flex:1;}
 
 .featured-job{
     border-left: 5px solid hsl(180, 29%, 50%);

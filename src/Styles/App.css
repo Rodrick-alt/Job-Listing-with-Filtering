@@ -29,11 +29,6 @@ main,
   height: auto;
 }
 
-/* * {
-  outline: 1px solid #f00 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-} */
 /* No hover effects on touch ***********************************/
 @media (hover: hover) and (pointer: fine) {
   #clear-btn:hover {
@@ -104,7 +99,7 @@ main .job-post img {
 }
 
 #search-bar {
-  display: none;
+  display: flex;
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
@@ -140,14 +135,6 @@ main .job-post img {
   padding: 0.5rem;
   color: hsl(180deg, 31%, 95%);
   background-color: hsl(180deg, 29%, 50%);
-}
-
-#search-bar > * {
-  flex: 0 1 100%;
-}
-
-#clear-btn {
-  flex: 1;
 }
 
 .featured-job {
