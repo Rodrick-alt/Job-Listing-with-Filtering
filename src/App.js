@@ -4,19 +4,24 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import JsonData from './data.json';
 
+//added new and featured job differiante
 
 function App() {
+  // job listing array
   const [listings, setListings] = useState([]);
-  const [array, setArray] = useState([]);
+  // search array
+  const [searchArray, setSearchArray] = useState([]);
+  let checkArr = [];
 
   // Setter Functions called in their own components have to be conditional. OR-
   // Stops infinite re-renders by only excuting setter functions in useEffect.
   window.onload = () => {
-    setListings(old => FillListings);
+    setListings(old => <FillListings />);
   }
 
   function FillListings() {
     let mapped = JsonData.slice().map(data => {
+      // job filter tablets
       let arr = [];
       arr.push(<button onClick={() => HandleFillBar(data.role)}>{data.role}</button>);
       arr.push(<button onClick={() => HandleFillBar(data.level)}>{data.level}</button>);
@@ -35,8 +40,17 @@ function App() {
         )
       };
 
+      // job post styling
+      let styling = 'job-post'
+      if (data.featured)
+        styling = 'job-post featured-job'
+      if (data.new)
+        styling = 'job-post new-job'
+      if (data.featured && data.new)
+        styling = 'job-post featured-job new-job'
+
       return (
-        <div className='job-post featured-job new-job'>
+        <div className={styling}>
           <div className='group1'>
             <img className='company-img' src={data.logo} alt='logo' />
 
@@ -66,28 +80,42 @@ function App() {
       )
     }
     )
-    return ([...mapped])
+    // console.log(mapped[0])
+    return (mapped)
   }
 
-
-  function SearchBar(tab) {
-    if (tab !== '' && array.includes('HTML') === false) {
-      console.log(array.includes('HTML'));
-      setArray(old => [old, <button key={Math.random(0, 201)}>{tab}<p>X</p></button>])
-    }
-  }
 
   function HandleClear() {
-    setArray(old => []);
+    checkArr = [];
+    setSearchArray(old => []);
     document.getElementById('search-bar').style.display = 'none';
   }
+
+  function SearchBar(tab) {
+    if (checkArr.includes(tab) == false) {
+      checkArr.push(tab);
+      setSearchArray(old => [...old, <button key={old.length}
+        onClick={() => RemoveSearchBtn(old.length)}>{tab}<p>X</p></button>]);
+      document.getElementById('search-bar').style.display = 'flex';
+    } else { console.log(checkArr) }
+  }
+
   function HandleFillBar(tab) {
     SearchBar(tab);
-    let bar = document.getElementById('search-bar');
-    if (bar.style.display === 'none') {
-      bar.style.display = 'flex';
-    }
   }
+
+
+  function RemoveSearchBtn(index) {
+    console.log(index)
+    // index -= 1;
+    // if (index < 0) index = 1;
+    // checkArr.splice(index, 1);
+    // setSearchArray(old => {
+    //   old.splice(index, 1);
+    //   return [...old]
+    // })
+  }
+
 
 
   return (
@@ -98,12 +126,12 @@ function App() {
       <main>
         <div id='search-bar'>
           <div className='search-tablets'>
-            {array}
+            {searchArray}
           </div>
           <button id='clear-btn'
-            onClick={() => HandleClear()}>Clear</button>
+            onClick={HandleClear}>Clear</button>
         </div>
-        <FillListings />
+        {listings}
       </main>
     </div>
   );
