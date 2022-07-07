@@ -98,6 +98,10 @@ main .job-post img {
   height: 90px;
 }
 
+.job-post-off {
+  display: none;
+}
+
 #search-bar {
   display: none;
   flex-flow: row;
