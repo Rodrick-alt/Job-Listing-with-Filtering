@@ -16,7 +16,7 @@ function App() {
   window.onload = () => {
     setListings(old => <FillListings />);
   }
-  // Restructuring Listings whenenver filtertabs are added to searchbar
+  // Restructuring Listings whenenver filtertabs are added or Removed to searchbar
   useEffect(() => {
     setListings(old => <FillListings />);
   }, [searchArray, checkArr])
